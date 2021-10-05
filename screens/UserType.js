@@ -52,7 +52,7 @@ export default function UserType({ navigation }) {
                     </View>
                     {null===clicked?<View></View>:<TouchableOpacity
                         style={styles.button}
-                        onPress={() => {setUserType('student');navigation.push('SignUp')}}
+                        onPress={() => {setUserType('student');navigation.push('SignUp',{'userType':userType})}}
                     >
                         <Text style={{color:'#380E86',fontSize:14}}>Continue</Text>
                     </TouchableOpacity>

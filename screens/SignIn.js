@@ -27,7 +27,7 @@ export default function SignIn({ navigation }) {
                 <Text
                     style={styles.text}
                 >
-                    Student Sign In
+                    Sign In
                 </Text>
             </View>             
             <View style={styles.signInForm}>
@@ -51,6 +51,7 @@ export default function SignIn({ navigation }) {
                 placeholder="Enter Your Password"
                 style={styles.textinput}
                 mode='outlined'
+                secureTextEntry={true}
                 />
                 <TouchableOpacity
                     onPress={()=>{navigation.push('ForgotPassword')}}

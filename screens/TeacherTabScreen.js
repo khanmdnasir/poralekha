@@ -34,6 +34,7 @@ import FindCourseScreen from './FindCourseScreen';
 import FindSkillCourseScreen from './FindSkillCourseScreen';
 import FindTeacherScreen from './FindTeacherScreen';
 import TeacherDashBoard from './TeacherDashBoard';
+import AddLiveClass from './AddLiveClass';
 
 
 
@@ -44,12 +45,7 @@ export const HomeStack = ()=>{
       <Stack.Screen name="TeacherDashBoard" component={TeacherDashBoard} />
       <Stack.Screen name="MyProfile" component={ProfileScreen} />
       <Stack.Screen name="MyClasses" component={MyClasses} />
-      <Stack.Screen name="MyCourses" component={MyCourses} />
-      <Stack.Screen name="MyBooks" component={MyBooks} />
-      <Stack.Screen name="SavedTeachers" component={SavedTeachers} />
-      <Stack.Screen name="Payment" component={Payment} />
-      <Stack.Screen name="PaymentHistory" component={PaymentHistory} />
-      <Stack.Screen name="AddPaymentMethod" component={AddPaymentMethod} />
+      <Stack.Screen name="MyCourses" component={MyCourses} />    
       <Stack.Screen name="InviteFriends" component={InviteFriends} />
       <Stack.Screen name="ReportProblem" component={ReportProblem} />
       <Stack.Screen name="HelpDesk" component={HelpDesk} />
@@ -58,15 +54,8 @@ export const HomeStack = ()=>{
       <Stack.Screen name="EditAccountInformation" component={EditAccountInformation} />
       <Stack.Screen name="ChangePassword" component={ChangePassword} />
       <Stack.Screen name="EditLiveClass" component={EditLiveClass} />
-      <Stack.Screen name="ChangeTeacher" component={ChangeTeacher} />
-      <Stack.Screen name="TeacherDetails" component={TeacherDetails} />
       <Stack.Screen name="CancelledCourseDetails" component={CancelledCourseDetails} />
-      <Stack.Screen name="WishList" component={WishList} />
-      <Stack.Screen name="BooksDetails" component={BooksDetails} />
-      <Stack.Screen name="FindBookScreen" component={FindBookScreen} />
-      <Stack.Screen name="FindCourseScreen" component={FindCourseScreen} />
-      <Stack.Screen name="FindSkillCourseScreen" component={FindSkillCourseScreen} />
-      <Stack.Screen name="FindTeacherScreen" component={FindTeacherScreen} />
+      <Stack.Screen name="AddLiveClass" component={AddLiveClass} />
     </Stack.Navigator>
   )
 }

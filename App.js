@@ -41,7 +41,14 @@ const App = () => {
   const [isLoading,setIsLoading]=React.useState(true);
   const [userToken,setUserToken]=React.useState(null);
   const [isFirst,setIsFirst]=React.useState(true)
-  const [userType,setUserType]=React.useState('teacher')
+ const [user,setUser]=React.useState({
+   username:'',
+   email:'',
+   phone:'',
+   password:'',
+   confirm_password:'',
+   userType:'teacher'
+ })
   const authContext=React.useMemo(() => {
     return {
       SignIn: () => {
@@ -79,7 +86,7 @@ const App = () => {
       <NavigationContainer>
         {userToken?(
           
-         [ (userType==='teacher'?
+         [ (user.userType==='teacher'?
           <Drawer.Navigator drawerContent={props => <TeacherDrawerContent {...props}/>} screenOptions={{headerShown:false}}>
             <Drawer.Screen name="Dashboard" component={TeacherTabScreen}  />      
           </Drawer.Navigator>:

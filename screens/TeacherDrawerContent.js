@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet,TouchableOpacity } from 'react-native';
+import { View, StyleSheet,TouchableOpacity,Image } from 'react-native';
 import {
     DrawerContentScrollView,
     DrawerItem
@@ -53,75 +53,54 @@ export default function TeacherDrawerContent(props) {
                     <Drawer.Section style={styles.drawerSection}>
                     
                         <DrawerItem 
+                            
                             icon={() => (
-                                <Icon 
-                                name="users" 
-                                color='#FFFFFF'
+                                <Image source={require('../components/images/iconclass.png')}/>
                                 
-                                />
+                                // <Icon 
+                                // name="users" 
+                                // color='#FFFFFF'
+                                
+                                // />
                             )}
                             label="My Classes"
-                            labelStyle={{color: '#FFFFFF'}}
+                            labelStyle={{color: '#FFFFFF',fontSize:16}}
                             onPress={() => {props.navigation.navigate('MyClasses')}}
                         />
                         <DrawerItem 
                             icon={({color, size}) => (
-                                <Icon 
-                                name="youtube" 
-                                color='#FFFFFF'
-                                
-                                />
+                                <Image source={require('../components/images/iconcourse.png')}/>
                             )}
                             label="My Courses"
-                            labelStyle={{color: '#FFFFFF'}}
+                            labelStyle={{color: '#FFFFFF',fontSize:16}}
                             onPress={() => {props.navigation.navigate('MyCourses')}}
                         />
+                        
                         <DrawerItem 
                             icon={({color, size}) => (
-                                <Icon 
-                                name="book" 
-                                color='#FFFFFF'
+                                <Image source={require('../components/images/iconstudentrequest.png')}/>
                                 
-                                />
                             )}
-                            label="My Books"
-                            labelStyle={{color: '#FFFFFF'}}
-                            onPress={() => {props.navigation.navigate('MyBooks')}}
-                        />
-                        <DrawerItem 
-                            icon={({color, size}) => (
-                                <Icon 
-                                name="chalkboard-teacher" 
-                                color='#FFFFFF'
-                                
-                                />
-                            )}
-                            label="My Teachers"
-                            labelStyle={{color: '#FFFFFF'}}
+                            label="Student Request"
+                            labelStyle={{color: '#FFFFFF',fontSize:16}}
                             onPress={() => {props.navigation.navigate('SavedTeachers')}}
                         />
+                        </Drawer.Section>
+                    <Drawer.Section style={styles.drawerSection}>
                         <DrawerItem
                             icon={({color, size}) => (
-                                <Icon 
-                                name="clipboard" 
-                                color='#FFFFFF'
-                                
-                                />
+                                <Image source={require('../components/images/iconmyearnings.png')}/>
                             )}
-                            label="WishList"
-                            labelStyle={{color: '#FFFFFF'}}
+                            label="My Earnings"
+                            labelStyle={{color: '#FFFFFF',fontSize:16}}
                             onPress={() => {props.navigation.navigate('WishList')}}
                         />
                         <DrawerItem 
                             icon={({color, size}) => (
-                                <Icon 
-                                name="money-bill" 
-                                color='#FFFFFF'
-                                
-                                />
+                                <Image source={require('../components/images/iconstatistics.png')}/>
                             )}
-                            label="Payment"
-                            labelStyle={{color: '#FFFFFF'}}
+                            label="Statistics"
+                            labelStyle={{color: '#FFFFFF',fontSize:16}}
                             onPress={() => {props.navigation.navigate('Payment')}}
                         />
                     </Drawer.Section>
@@ -129,26 +108,18 @@ export default function TeacherDrawerContent(props) {
                     <Drawer.Section style={styles.drawerSection}>
                                 <DrawerItem
                                     icon={({color, size}) => (
-                                        <Icon 
-                                        name="share" 
-                                        color='#FFFFFF'
-                                        
-                                        />
+                                        <Image source={require('../components/images/iconinvitefriend.png')}/>
                                     )}
                                     label="Invite Friends"
-                                    labelStyle={{color: '#FFFFFF'}}
+                                    labelStyle={{color: '#FFFFFF',fontSize:16}}
                                     onPress={() => {props.navigation.navigate('InviteFriends')}}
                                 />
                                 <DrawerItem
                                     icon={({color, size}) => (
-                                        <Icon 
-                                        name="question" 
-                                        color='#FFFFFF'
-                                        
-                                        />
+                                        <Image source={require('../components/images/iconhelpdesk.png')}/>
                                     )}
                                     label="Help Desk"
-                                    labelStyle={{color: '#FFFFFF'}}
+                                    labelStyle={{color: '#FFFFFF',fontSize:16}}
                                     onPress={() => {props.navigation.navigate('HelpDesk')}}
                                 />
                                 
@@ -159,14 +130,10 @@ export default function TeacherDrawerContent(props) {
             <Drawer.Section style={styles.bottomDrawerSection}>
                 <DrawerItem 
                     icon={({color, size}) => (
-                        <Icon 
-                        name="sign-out-alt" 
-                        color='#FFFFFF'
-                        
-                        />
+                        <Image source={require('../components/images/iconlogout.png')}/>
                     )}
                     label="Sign Out"
-                    labelStyle={{color: '#FFFFFF'}}
+                    labelStyle={{color: '#FFFFFF',fontSize:16}}
                     onPress={() => {SignOut()}}
                 />
             </Drawer.Section>
@@ -210,10 +177,11 @@ const styles = StyleSheet.create({
     },
     drawerSection: {
       marginTop: 15,
+      
     },
     bottomDrawerSection: {
         marginBottom: 15,
-        borderTopColor: '#f4f4f4',
+        borderTopColor: '#8A4AFF',
         borderTopWidth: 1
     },
     preference: {
@@ -233,5 +201,6 @@ const styles = StyleSheet.create({
         marginLeft: 60,
         marginTop: 10
 
-    }
+    },
+    
   });

@@ -101,7 +101,7 @@ export default function EditLiveClass({ navigation }) {
                             <Text style={{color:'#FFFFFF',fontSize:14}}>Send Request</Text>
                         </TouchableOpacity>
                         <DatePicker
-                            modal={openDate}
+                            modal={true}
                             open={openDate}
                             date={date}
                             mode='date'
@@ -114,7 +114,7 @@ export default function EditLiveClass({ navigation }) {
                             }}
                         />
                         <DatePicker
-                            modal={openStartTime}
+                            modal={true}
                             open={openStartTime}
                             date={starttime}
                             mode='time'
@@ -127,7 +127,7 @@ export default function EditLiveClass({ navigation }) {
                             }}
                         />
                         <DatePicker
-                            modal={openEndTime}
+                            modal={true}
                             open={openEndTime}
                             date={endtime}
                             mode='time'

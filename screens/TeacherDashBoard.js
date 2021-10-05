@@ -29,15 +29,17 @@ export default function TeacherDashBoard({ navigation }) {
                         <Text style={{color: '#380E86',fontSize: 18,fontWeight: 'bold'}}>Morning,</Text>
                         <Text style={{color: '#380E86',fontSize: 18}}> Teacher</Text>
                         </View> 
-                        <Text style={styles.text}>There are 500+ courses matches with</Text>
-                        <Text style={styles.text}>your subject, Enjoy free & premium</Text>
-                        <Text style={styles.text}>courses.</Text>
-                        <Searchbar
-                        placeholder="Search"
-                        onChangeText={onChangeSearch}
-                        value={searchQuery}
-                        style={styles.searchBar}
-                        />
+                        <Text style={styles.text}>There are 200+ students waiting for</Text>
+                        <Text style={styles.text}>your courses.</Text>
+                        
+                        <View style={{flexDirection:'row',marginLeft:25,marginTop:20}}>
+                            <TouchableOpacity style={{backgroundColor:'#380E86',height:45,width:160,borderRadius:10,justifyContent:'center',alignItems:'center',marginRight:20}} onPress={()=>navigation.push('AddLiveClass')}>
+                                <Text style={{color:'#FFFFFF',fontSize:14}}>Create Live Class</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={{backgroundColor:'#8A4AFF',height:45,width:160,borderRadius:10,justifyContent:'center',alignItems:'center'}}>
+                                <Text style={{color:'#FFFFFF',fontSize:14}}>Create Course</Text>
+                            </TouchableOpacity>
+                        </View>
                     </ImageBackground>
                 
                 <View style={{flexDirection: 'row',marginTop: 10,marginLeft:25}}> 
@@ -142,7 +144,7 @@ export default function TeacherDashBoard({ navigation }) {
                     </View>
                 </View>
                 <View style={{flexDirection: 'row',marginTop: 20,marginLeft:25}}> 
-                    <Text style={{color: '#380E86',fontSize: 15}}>Enrolled Class</Text>
+                    <Text style={{color: '#380E86',fontSize: 15}}>Enrolled Courses</Text>
                     <TouchableOpacity>
                         <Text style={{color: '#7C7C7C',fontSize: 15,marginLeft: 190}}>View All</Text>
                     </TouchableOpacity>
@@ -350,130 +352,11 @@ export default function TeacherDashBoard({ navigation }) {
 
                 {/* Top Categories */}
 
-                <Text style={{color: '#380E86',fontSize: 15,marginTop: 20,marginLeft:25}}>Top Categories</Text>
-                <View style={{flexDirection: 'row',marginTop: 10,justifyContent:'center'}}>
-                    <TouchableOpacity onPress={()=>navigation.push('FindTeacherScreen')}>
-
-                    <View style={{width: 70,height: 70,backgroundColor: '#FFFFFF',borderRadius:180,justifyContent: 'center',alignItems: 'center'}}>
-                        <Image source={require('../components/images/tutor.png')}/>
-                    </View>
-                    <Text style={{color: '#617487',fontSize: 9,alignSelf:'center',marginTop: 5}}>Find Tutors</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={{marginLeft: 15}} onPress={()=>navigation.push('FindSkillCourseScreen')}>
-
-                    <View style={{width: 70,height: 70,backgroundColor: '#FFFFFF',borderRadius:180,justifyContent: 'center',alignItems: 'center'}}>
-                        <Image source={require('../components/images/skills.png')}/>
-                    </View>
-                    <Text style={{color: '#617487',fontSize: 9,alignSelf:'center',marginTop: 5}}>Skillbase</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={{marginLeft: 15}} onPress={()=>navigation.push('FindBookScreen')}>
-
-                    <View style={{width: 70,height: 70,backgroundColor: '#FFFFFF',borderRadius:180,justifyContent: 'center',alignItems: 'center'}}>
-                        <Image source={require('../components/images/books.png')}/>
-                    </View>
-                    <Text style={{color: '#617487',fontSize: 9,alignSelf:'center',marginTop: 5}}>Library</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={{marginLeft: 15}} onPress={()=>navigation.push('FindCourseScreen')}>
-
-                    <View style={{width: 70,height: 70,backgroundColor: '#FFFFFF',borderRadius:180,justifyContent: 'center',alignItems: 'center'}}>
-                        <Image source={require('../components/images/onlineCourse.png')}/>
-                    </View>
-                    <Text style={{color: '#617487',fontSize: 9,alignSelf:'center',marginTop: 5}}>Find Courses</Text>
-                    </TouchableOpacity>
-                </View>
+                
 
 
-                <View style={{flexDirection: 'row',marginTop: 20,marginLeft:25}}> 
-                    <Text style={{color: '#380E86',fontSize: 15}}>Recommended Teacher</Text>
-                    <TouchableOpacity>
-                        <Text style={{color: '#7C7C7C',fontSize: 15,marginLeft: 130}}>View All</Text>
-                    </TouchableOpacity>
-                    
-                </View>
-                <View style={{backgroundColor: '#FFFFFF',marginLeft: 25,borderTopStartRadius:15,marginTop:10}}>                    
-                    <ScrollView horizontal={true} style={{flex:1,flexDirection:'row'}} showsHorizontalScrollIndicator={false}>
-                        {buttons.map((buttonLabel,index)=>{
-                            return (
-                                <TouchableOpacity 
-                                onPress={(item)=>handleClick(item,index)}
-                                key={index}
-                                style={[index === clicked?styles.buttonActive:styles.button,index === 0?{borderTopStartRadius:15}:""]}>
-                                    <Text style={index === clicked?styles.text1Active:styles.text1}>{buttonLabel}</Text>
-                                </TouchableOpacity>
-                            )
-                        })}
-                        
-
-                    </ScrollView>
-                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                        <View style={{height: 105,width:80,backgroundColor: '#EEF4F6',margin: 10,borderRadius:7}}>
-                            <Image source={require('../components/images/teacher.png')} style={{height: 55,width: 80}}/>
-                            <Text style={{fontSize:8,alignSelf:'center',marginTop:5}}>Md. Kamrul Islam</Text>
-                            <Text style={{color:'#617487',fontSize: 6,alignSelf:'center',marginTop:5}}>AIUB</Text>
-                            <Rating
-                            type='star'                        
-                            ratingCount={5}
-                            readonly={true}
-                            imageSize={8}
-                            tintColor='#EEF4F6'
-                            // onFinishRating={this.ratingCompleted}
-                            style={{marginTop:5}}
-                            startingValue={4}
-                            />
-                        </View>
-                        <View style={{height: 105,width:80,backgroundColor: '#EEF4F6',margin: 10,borderRadius:7}}>
-                            <Image source={require('../components/images/teacher.png')} style={{height: 55,width: 80}}/>
-                            <Text style={{fontSize:8,alignSelf:'center',marginTop:5}}>Md. Kamrul Islam</Text>
-                            <Text style={{color:'#617487',fontSize: 6,alignSelf:'center',marginTop:5}}>AIUB</Text>
-                            <Rating
-                            type='star'                        
-                            ratingCount={5}
-                            readonly={true}
-                            imageSize={8}
-                            tintColor='#EEF4F6'
-                            // onFinishRating={this.ratingCompleted}
-                            style={{marginTop:5}}
-                            startingValue={4}
-                            />
-                        </View>
-                        <View style={{height: 105,width:80,backgroundColor: '#EEF4F6',margin: 10,borderRadius:7}}>
-                            <Image source={require('../components/images/teacher.png')} style={{height: 55,width: 80}}/>
-                            <Text style={{fontSize:8,alignSelf:'center',marginTop:5}}>Md. Kamrul Islam</Text>
-                            <Text style={{color:'#617487',fontSize: 6,alignSelf:'center',marginTop:5}}>AIUB</Text>
-                            <Rating
-                            type='star'                        
-                            ratingCount={5}
-                            readonly={true}
-                            imageSize={8}
-                            tintColor='#EEF4F6'
-                            // onFinishRating={this.ratingCompleted}
-                            style={{marginTop:5}}
-                            startingValue={4}
-                            />
-                        </View>
-                        <View style={{height: 105,width:80,backgroundColor: '#EEF4F6',margin: 10,borderRadius:7}}>
-                            <Image source={require('../components/images/teacher.png')} style={{height: 55,width: 80}}/>
-                            <Text style={{fontSize:8,alignSelf:'center',marginTop:5}}>Md. Kamrul Islam</Text>
-                            <Text style={{color:'#617487',fontSize: 6,alignSelf:'center',marginTop:5}}>AIUB</Text>
-                            <Rating
-                            type='star'                        
-                            ratingCount={5}
-                            readonly={true}
-                            imageSize={8}
-                            tintColor='#EEF4F6'
-                            // onFinishRating={this.ratingCompleted}
-                            style={{marginTop:5}}
-                            startingValue={4}
-                            />
-                        </View>
-                       
-                        
-                        
-                    </ScrollView>
-                </View>
+                
+                
                 <Text style={{color: '#380E86',fontSize: 15,marginLeft:25,marginTop:20}}>Whats new</Text>
                 <ImageBackground source={require('../components/images/dashboardFooter.png')} style={{flex:1,height:150,marginTop:10}}>
                     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>

@@ -1,26 +1,20 @@
 import React,{useState} from 'react';
 import { View,Text,ImageBackground, StyleSheet, TouchableOpacity,Dimensions, Image, SafeAreaView} from 'react-native';
 import { AuthContext } from '../components/context';
+import { UserContext } from '../components/context';
 
 import { TextInput } from 'react-native-paper';
 const image = require("../components/images/background-overlay.png");
 
-export default function SignUp({ navigation }) {
-    const [user, onChangeUser] = React.useState();
-    const [email, onChangeEmail] = React.useState();
-    const [password, onChangePassword] = React.useState();
-    const [confirm_password, onChangeConfirmPassword] = React.useState();
+export default function SignUp(props) {
+    const [user,setUser]=useState({username:'',email:'',phone:'',password:'',confirm_password:'',userType:props.userType})
+    
     const [isSelected, setSelection] = useState(false);
-    // const {data} = route.params;
-    const [isStudent,setStudent]=useState(false);
-    const [isTeacher,setTeacher]=useState(false);
-    // if(data=='student'){
-    //     setStudent(true);
-    // }else{
-    //     setTeacher(true)
-    // }
+    
     return (
-        <SafeAreaView style={styles.container}>
+        
+
+        <SafeAreaView style={styles.container} >
             <ImageBackground source={image} resizeMode="cover" style={styles.bimage}>
             <View style={{flex: 1}}>
                 <TouchableOpacity
@@ -33,22 +27,8 @@ export default function SignUp({ navigation }) {
                     />
                 </TouchableOpacity>
                 
-                {/* {isStudent?(
-                    <Text
-                    style={styles.text}
-                >
-                    Student Sign Up
-                </Text>
-                ):(
-                    <Text
-                    style={styles.text}
-                >
-                    Teacher Sign Up
-                </Text> 
-                )
-            
-                } */}
-                <Text style={styles.text}>Student Sign Up</Text>
+                
+                <Text style={styles.text}>Sign Up</Text>
                 
                    
                 
@@ -62,38 +42,50 @@ export default function SignUp({ navigation }) {
                 </Text>
                 
                 <TextInput
-                onChangeText={onChangeUser}
-                value={user}
+                
+                value={user.username}
+                onChange={e => setUser({ ...user, username:e.target.value})}
                 placeholder="Enter Your Username"
                 style={styles.textinput}
                 mode='outlined'
                 />
                 <TextInput
-                onChangeText={onChangeEmail}
-                value={email}
+                value={user.email}
+                onChange={e => setUser({ ...user, email:e.target.value})}
                 placeholder="Enter Your Email Address"
+                
                 style={styles.textinput}
                 mode='outlined'
                 />
                 <TextInput
-                onChangeText={onChangePassword}
-                value={password}
+                value={user.phone}
+                onChange={e => setUser({ ...user, phone:e.target.value})}
+                placeholder="Enter Your Phone Number"
+                style={styles.textinput}
+                mode='outlined'
+                
+                />
+                <TextInput
+                value={user.password}
+                onChange={e => setUser({ ...user, password:e.target.value})}
                 placeholder="Enter Your Password"
                 style={styles.textinput}
                 mode='outlined'
+                secureTextEntry={true}
                 />
                 <TextInput
-                onChangeText={onChangeConfirmPassword}
-                value={confirm_password}
+                value={user.confirm_password}
+                onChange={e => setUser({ ...user, confirm_password:e.target.value})}
                 placeholder="Confirm Password"
                 style={styles.textinput}
                 mode='outlined'
+                secureTextEntry={true}
                 />
                 
                 
                 <TouchableOpacity
                     style={styles.button}
-                    onPress={()=>{navigation.push('SignUpCongrats')}}
+                    onPress={()=>{props.navigation.push('SignUpCongrats')}}
                 >
                     <Text style={{color: '#FFFFFF'}}>Sign Up</Text>
                 </TouchableOpacity>
@@ -130,6 +122,7 @@ export default function SignUp({ navigation }) {
             </View>                
             </ImageBackground> 
         </SafeAreaView>
+       
         
     )
 }

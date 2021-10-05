@@ -142,7 +142,7 @@ export default function StudentDashboard({ navigation }) {
                     </View>
                 </View>
                 <View style={{flexDirection: 'row',marginTop: 20,marginLeft:25}}> 
-                    <Text style={{color: '#380E86',fontSize: 15}}>Enrolled Class</Text>
+                    <Text style={{color: '#380E86',fontSize: 15}}>Popular Courses</Text>
                     <TouchableOpacity>
                         <Text style={{color: '#7C7C7C',fontSize: 15,marginLeft: 190}}>View All</Text>
                     </TouchableOpacity>
