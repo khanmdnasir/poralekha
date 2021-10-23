@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import {View, Text, ImageBackground, TouchableOpacity, Image,StyleSheet} from 'react-native'
+import {View, Text, ImageBackground, TouchableOpacity, Image,StyleSheet,ScrollView} from 'react-native'
 import DatePicker from 'react-native-date-picker'
 import CheckBox from '@react-native-community/checkbox';
 import Icon from 'react-native-vector-icons/FontAwesome5'
@@ -16,6 +16,8 @@ export default function AddLiveClass({ navigation }) {
     const [openStartTime, setOpenStartTime] = useState(false)
     const [openEndTime, setOpenEndTime] = useState(false)
     const [title, setTitle] = useState('')
+    const [chapter, setChapter] = useState('')
+    const [part, setPart] = useState('')
     const [selectedValue, setSelectedValue] = useState("Select Class");
     const [chapterSelected, chapterSelection] = useState(false);
     const [partSelected, partSelection] = useState(false);
@@ -41,6 +43,7 @@ export default function AddLiveClass({ navigation }) {
             </View> 
             </ImageBackground>
             <View style={{flex:7,backgroundColor:'#FFFFFF',padding:25}}>
+                <ScrollView showsVerticalScrollIndicator={false}>
                         <TouchableOpacity style={{alignItems:'center',backgroundColor:'#F6F7F9',borderRadius:7,marginTop:10,height:45,flexDirection:'row'}} onPress={()=>setOpenDate(true)}>
                             <Text style={{color:'#B5B4BB',fontSize:14,marginLeft:10,marginRight:195}}>
                                 Select Class Date
@@ -48,7 +51,7 @@ export default function AddLiveClass({ navigation }) {
                             <Icon name="calendar" style={{height:15,width:15}}/>
                             {/* <Image source={require('../components/images/calendar.png')} style={{height:20,width:20}}/> */}
                         </TouchableOpacity>
-                        <View style={{flexDirection:'row',marginTop:15}}>
+                        <View style={{flexDirection:'row',marginTop:10}}>
                             <TouchableOpacity style={{flex:1,alignItems:'center',backgroundColor:'#F6F7F9',borderRadius:7,height:45,flexDirection:'row',marginRight:12}} onPress={()=>setOpenStartTime(true)}>
                                 <Text style={{color:'#B5B4BB',fontSize:14,marginLeft:10,marginRight:70}}>Start Time</Text>
                                 <Icon name="clock" style={{height:15,width:15,marginRight:5}}/>
@@ -81,7 +84,7 @@ export default function AddLiveClass({ navigation }) {
                             <Picker.Item label="Bengali" color='#B5B4BB' value="Bengali" />
                             </Picker>
                         </View>
-                        <View style={{flexDirection:'row',marginTop:15}}>
+                        <View style={{flexDirection:'row',marginTop:10}}>
                             <View style={[styles.checkBox,{marginRight:10}]}>
                             <CheckBox
                                 disabled={false}
@@ -104,6 +107,28 @@ export default function AddLiveClass({ navigation }) {
                             <Text style={{color:'#66C6B9',fontSize:12}}> (Optional)</Text>
                             </View>
                         </View>
+                        {chapterSelected?
+                        <TextInput 
+                        style={styles.input}
+                        
+                        value={chapter}
+                        placeholder="Type chapter Name & Limit"
+                        placeholderTextColor="#B5B4BB"
+                        mode='outlined'
+                        onChangeText={chapter=>setChapter(chapter)}
+                        
+                        />:<View></View>}
+                        {partSelected?
+                        <TextInput 
+                        style={styles.input}
+                        
+                        value={chapter}
+                        placeholder="Type part Name & Limit"
+                        placeholderTextColor="#B5B4BB"
+                        mode='outlined'
+                        onChangeText={chapter=>setChapter(chapter)}
+                        
+                        />:<View></View>}
                         <View style={{flexDirection:'row',marginTop:30,alignSelf:'center'}}>
                             <Text style={{color:'#380E86',fontSize:12}}>Upload Thumbnail </Text>
                             <Text style={{color:'#66C6B9',fontSize:12}}>(Optional)</Text>
@@ -115,6 +140,7 @@ export default function AddLiveClass({ navigation }) {
                         <TouchableOpacity style={styles.addLiveClass}>
                             <Text style={{color:'#FFFFFF',fontSize:16}}>Add Live Class</Text>
                         </TouchableOpacity>
+                        
                         <DatePicker
                             modal={true}
                             open={openDate}
@@ -184,6 +210,7 @@ export default function AddLiveClass({ navigation }) {
                 
                 
                 
+        </ScrollView>
         </View>
         </View>
         
@@ -211,7 +238,7 @@ const styles=StyleSheet.create({
       input: {
         height:45,
         borderRadius:7,
-        marginTop:15,
+        marginTop:10,
         backgroundColor:'#F6F7F9',
        
         
@@ -221,7 +248,7 @@ const styles=StyleSheet.create({
         backgroundColor: '#F6F7F9',
         borderRadius: 7,
         height: 45,
-        marginTop: 15,
+        marginTop: 10,
         justifyContent: 'center',
        
 

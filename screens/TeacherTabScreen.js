@@ -3,7 +3,7 @@ import React from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import WishList from './WishListScreen';
+
 import NotificationScreen from './NotificationScreen';
 import InboxScreen from './InboxScreen';
 import SettingsScreen from './SettingsScreen';
@@ -11,30 +11,28 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ProfileScreen from './ProfileScreen';
 import MyClasses from './MyClasses';
 import MyCourses from './MyCourses';
-import MyBooks from './MyBooks';
-import SavedTeachers from './SavedTeachers';
-import Payment from './Payment';
+
 import InviteFriends from './InviteFriends';
 import ReportProblem from './ReportProblem';
 import HelpDesk from './HelpDesk';
-import AddPaymentMethod from './AddPaymentMethod';
-import PaymentHistory from './PaymentHistory';
+
 import EditProfile from './EditProfile';
 import EditLanguage from './EditLanguage';
 import EditAccountInformation from './EditAccountInformation';
 import ChangePassword from './ChangePassword';
 import EditLiveClass from './EditLiveClass';
-import ChangeTeacher from './ChangeTeacher';
-import TeacherDetails from './TeacherDetails';
+
 import CancelledCourseDetails from './CancelledCourseDetails';
 import CartScreen from './CartScreen';
-import BooksDetails from './BooksDetails';
-import FindBookScreen from './FindBookScreen';
-import FindCourseScreen from './FindCourseScreen';
-import FindSkillCourseScreen from './FindSkillCourseScreen';
-import FindTeacherScreen from './FindTeacherScreen';
+
 import TeacherDashBoard from './TeacherDashBoard';
 import AddLiveClass from './AddLiveClass';
+import AddCourse from './AddCourse';
+import Statistics from './Statistics';
+import FilterStatistics from './FilterStatistics';
+import MyEarnings from './MyEarnings';
+import StudentRequest from './StudentRequest';
+import WithDrawal from './Withdrawal';
 
 
 
@@ -56,6 +54,12 @@ export const HomeStack = ()=>{
       <Stack.Screen name="EditLiveClass" component={EditLiveClass} />
       <Stack.Screen name="CancelledCourseDetails" component={CancelledCourseDetails} />
       <Stack.Screen name="AddLiveClass" component={AddLiveClass} />
+      <Stack.Screen name="AddCourse" component={AddCourse} />
+      <Stack.Screen name="Statistics" component={Statistics} />
+      <Stack.Screen name="FilterStatistics" component={FilterStatistics} />
+      <Stack.Screen name="MyEarnings" component={MyEarnings} />
+      <Stack.Screen name="StudentRequest" component={StudentRequest} />
+      <Stack.Screen name="WithDrawal" component={WithDrawal} />
     </Stack.Navigator>
   )
 }

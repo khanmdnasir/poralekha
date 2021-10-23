@@ -83,7 +83,7 @@ export default function TeacherDrawerContent(props) {
                             )}
                             label="Student Request"
                             labelStyle={{color: '#FFFFFF',fontSize:16}}
-                            onPress={() => {props.navigation.navigate('SavedTeachers')}}
+                            onPress={() => {props.navigation.navigate('StudentRequest')}}
                         />
                         </Drawer.Section>
                     <Drawer.Section style={styles.drawerSection}>
@@ -93,7 +93,7 @@ export default function TeacherDrawerContent(props) {
                             )}
                             label="My Earnings"
                             labelStyle={{color: '#FFFFFF',fontSize:16}}
-                            onPress={() => {props.navigation.navigate('WishList')}}
+                            onPress={() => {props.navigation.navigate('MyEarnings')}}
                         />
                         <DrawerItem 
                             icon={({color, size}) => (
@@ -101,7 +101,7 @@ export default function TeacherDrawerContent(props) {
                             )}
                             label="Statistics"
                             labelStyle={{color: '#FFFFFF',fontSize:16}}
-                            onPress={() => {props.navigation.navigate('Payment')}}
+                            onPress={() => {props.navigation.navigate('Statistics')}}
                         />
                     </Drawer.Section>
                     

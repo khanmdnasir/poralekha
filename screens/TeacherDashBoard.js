@@ -36,7 +36,7 @@ export default function TeacherDashBoard({ navigation }) {
                             <TouchableOpacity style={{backgroundColor:'#380E86',height:45,width:160,borderRadius:10,justifyContent:'center',alignItems:'center',marginRight:20}} onPress={()=>navigation.push('AddLiveClass')}>
                                 <Text style={{color:'#FFFFFF',fontSize:14}}>Create Live Class</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={{backgroundColor:'#8A4AFF',height:45,width:160,borderRadius:10,justifyContent:'center',alignItems:'center'}}>
+                            <TouchableOpacity style={{backgroundColor:'#8A4AFF',height:45,width:160,borderRadius:10,justifyContent:'center',alignItems:'center'}} onPress={()=>navigation.push('AddCourse')}>
                                 <Text style={{color:'#FFFFFF',fontSize:14}}>Create Course</Text>
                             </TouchableOpacity>
                         </View>

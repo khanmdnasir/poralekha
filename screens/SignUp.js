@@ -19,7 +19,7 @@ export default function SignUp(props) {
             <View style={{flex: 1}}>
                 <TouchableOpacity
                     style={{marginTop: 30,marginLeft: 20}}
-                    onPress={()=>{navigation.goBack()}}
+                    onPress={()=>{props.navigation.goBack()}}
                 >
                     <Image
                         source={require('../components/images/Vector.png')}
@@ -113,7 +113,7 @@ export default function SignUp(props) {
                 <View style={{flexDirection: 'row',justifyContent: 'center',marginBottom: 10}}>
                     <Text style={{margin: 5}}>Already have an account?</Text>
                     <TouchableOpacity
-                        onPress={()=>{navigation.push('SignIn')}}
+                        onPress={()=>{props.navigation.push('SignIn')}}
                     >
                         <Text style={{color: '#380E86',margin: 5}}>Sign In</Text>
                     </TouchableOpacity>
@@ -146,7 +146,7 @@ const styles=StyleSheet.create({
         lineHeight: 30,
         fontWeight: "normal",
         marginLeft: 20,
-        marginTop: 20,
+        marginTop: 5,
        
         
       },
